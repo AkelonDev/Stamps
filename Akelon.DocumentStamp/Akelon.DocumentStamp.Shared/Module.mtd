@@ -1,0 +1,60 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "2a7a63e7-8570-4623-97c1-bac71f31050f",
+  "Name": "DocumentStamp",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "Akelon.DocumentStamp.Client",
+  "ClientBaseAssemblyName": "Akelon.DocumentStamp.ClientBase",
+  "ClientBaseNamespace": "Akelon.DocumentStamp.ClientBase",
+  "ClientNamespace": "Akelon.DocumentStamp.Client",
+  "Code": "Documen",
+  "CompanyCode": "Akelon",
+  "Cover": {
+    "NameGuid": "1f5975bc-502d-4e04-8006-d7319eaabf12",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "f1523489-e6c5-4b65-a83b-0b2bddc1265c",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "ad8f4ba6-78b8-4dc3-8cab-cceac01577ab",
+      "BackgroundPosition": "Stretch"
+    },
+    "Tabs": []
+  },
+  "DesktopViews": [],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "Akelon.DocumentStamp",
+  "IsolatedAssemblyName": "Akelon.DocumentStamp.Isolated",
+  "IsolatedNamespace": "Akelon.DocumentStamp.Isolated",
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "Akelon.DocumentStamp",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "Akelon.DocumentStamp.Server",
+  "ServerNamespace": "Akelon.DocumentStamp.Server",
+  "SharedAssemblyName": "Akelon.DocumentStamp.Shared",
+  "SharedNamespace": "Akelon.DocumentStamp.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.1",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

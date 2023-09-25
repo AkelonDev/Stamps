@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Property_DocumentType" xml:space="preserve">
+    <value>Тип документа</value>
+  </data>
+  <data name="Property_StampKind" xml:space="preserve">
+    <value>Вид штампа</value>
+  </data>
+  <data name="Property_DocumentPosition" xml:space="preserve">
+    <value>Расположение на документе</value>
+  </data>
+  <data name="Property_PagePosition" xml:space="preserve">
+    <value>Расположение на странице</value>
+  </data>
+  <data name="Property_SizeHeight" xml:space="preserve">
+    <value>Размер штампа (высота)</value>
+  </data>
+  <data name="Property_SizeWidth" xml:space="preserve">
+    <value>Размер штампа (ширина)</value>
+  </data>
+  <data name="Property_StampImage" xml:space="preserve">
+    <value>Изображение штампа</value>
+  </data>
+  <data name="Action_LoadStampPicture" xml:space="preserve">
+    <value>Загрузить изображение</value>
+  </data>
+  <data name="Action_LoadStampPictureHint" xml:space="preserve">
+    <value>Загрузить изображение штампа</value>
+  </data>
+  <data name="Action_LoadStampPictureDescription" xml:space="preserve">
+    <value>Использовать для штампа стороннее изображение.</value>
+  </data>
+  <data name="Action_DeleteStampPicture" xml:space="preserve">
+    <value>Удалить изображение</value>
+  </data>
+  <data name="Action_DeleteStampPictureHint" xml:space="preserve">
+    <value>Удалить изображение штампа.</value>
+  </data>
+  <data name="Action_DeleteStampPictureDescription" xml:space="preserve">
+    <value>Удалить изображение штампа.</value>
+  </data>
+  <data name="Ribbon_LoadStamp_1e793075f2a44928a17ef23a27260419" xml:space="preserve">
+    <value>Загрузка штампа</value>
+  </data>
+  <data name="Enum_DocumentPosition_FirstPage" xml:space="preserve">
+    <value>Первая страница</value>
+  </data>
+  <data name="Enum_DocumentPosition_EndPage" xml:space="preserve">
+    <value>Последняя страница</value>
+  </data>
+  <data name="Enum_DocumentPosition_EachPage" xml:space="preserve">
+    <value>Каждая страница</value>
+  </data>
+  <data name="Enum_PagePosition_UpLeft" xml:space="preserve">
+    <value>Верхний левый угол</value>
+  </data>
+  <data name="Enum_PagePosition_UpRight" xml:space="preserve">
+    <value>Верхний правый угол</value>
+  </data>
+  <data name="Enum_PagePosition_DownLeft" xml:space="preserve">
+    <value>Нижний левый угол</value>
+  </data>
+  <data name="Enum_PagePosition_DownRight" xml:space="preserve">
+    <value>Нижний правый угол</value>
+  </data>
+  <data name="Enum_StampKind_DrawingStamp" xml:space="preserve">
+    <value>Штамп из Drawing</value>
+  </data>
+  <data name="Enum_StampKind_LoadStamp" xml:space="preserve">
+    <value>Загруженный штамп</value>
+  </data>
+  <data name="Enum_StampKind_Barcode" xml:space="preserve">
+    <value>Штрихкод (Code 128)</value>
+  </data>
+  <data name="Enum_StampKind_QRCode" xml:space="preserve">
+    <value>QR-код</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Настройки штампа</value>
+  </data>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Настройку штампа</value>
+  </data>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Настройки штампов</value>
+  </data>
+</root>

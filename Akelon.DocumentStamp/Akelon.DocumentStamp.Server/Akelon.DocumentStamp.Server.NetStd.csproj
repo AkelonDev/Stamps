@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{cd4a9678-5649-44f7-3310-722653999ae8}</ProjectGuid>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>Akelon.DocumentStamp.Server</RootNamespace>
+    <AssemblyName>Akelon.DocumentStamp.Server</AssemblyName>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+  <Reference Include="CommonLibrary"><HintPath>..\..\..\.sds\Libraries\Common\CommonLibrary.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.Declension"><HintPath>..\..\..\.sds\Libraries\Common\Sungero.Declension.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.Localization"><HintPath>..\..\..\.sds\Libraries\Common\Sungero.Localization.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.Metadata"><HintPath>..\..\..\.sds\Libraries\Kernel\Sungero.Metadata.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Unity.Abstractions"><HintPath>..\..\..\.sds\Libraries\3dParty\Unity.Abstractions.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.Domain.Shared"><HintPath>..\..\..\.sds\Libraries\Kernel\Sungero.Domain.Shared.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.CoreEntities.Shared"><HintPath>..\..\..\.sds\Libraries\CoreEntities\Sungero.CoreEntities.Shared.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.Security"><HintPath>..\..\..\.sds\Libraries\Kernel\Sungero.Security.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.Domain"><HintPath>..\..\..\.sds\Libraries\Kernel\Sungero.Domain.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.CoreEntities.Server"><HintPath>..\..\..\.sds\Libraries\CoreEntities\Sungero.CoreEntities.Server.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.Agent.Jobs"><HintPath>..\..\..\.sds\Libraries\Kernel\Sungero.Agent.Jobs.dll</HintPath><Private>False</Private></Reference>
+  <Reference Include="Sungero.Agent.AsyncHandlers"><HintPath>..\..\..\.sds\Libraries\Kernel\Sungero.Agent.AsyncHandlers.dll</HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+  <ProjectReference Include="..\..\..\.sds\Sungero.Domain.Interfaces\Sungero.Domain.Interfaces.NetStd.csproj"><Project>{75c348f3-8b41-4177-967f-758d41a03eb6}</Project><Name>Sungero.Domain.Interfaces</Name><Private>FALSE</Private></ProjectReference>
+  <ProjectReference Include="..\Akelon.DocumentStamp.Shared\Akelon.DocumentStamp.Shared.NetStd.csproj"><Project>{26bc3613-5716-ab6b-cede-fc30bfd87945}</Project><Name>Akelon.DocumentStamp.Shared</Name><Private>FALSE</Private></ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ModuleQueries.xml" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+  </Target>
+</Project>

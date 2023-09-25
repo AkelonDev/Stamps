@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Property_DocumentType" xml:space="preserve">
+    <value>Document type</value>
+  </data>
+  <data name="Property_StampKind" xml:space="preserve">
+    <value>Stamp kind</value>
+  </data>
+  <data name="Property_DocumentPosition" xml:space="preserve">
+    <value>Document position</value>
+  </data>
+  <data name="Property_PagePosition" xml:space="preserve">
+    <value>Page position</value>
+  </data>
+  <data name="Property_SizeHeight" xml:space="preserve">
+    <value>Size stamp (height)</value>
+  </data>
+  <data name="Property_SizeWidth" xml:space="preserve">
+    <value>Size stamp (width)</value>
+  </data>
+  <data name="Property_StampImage" xml:space="preserve">
+    <value>Stamp image</value>
+  </data>
+  <data name="Action_LoadStampPicture" xml:space="preserve">
+    <value>Load stamp picture</value>
+  </data>
+  <data name="Action_LoadStampPictureDescription" xml:space="preserve">
+    <value>Use a third-party image for the stamp.</value>
+  </data>
+  <data name="Action_LoadStampPictureHint" xml:space="preserve">
+    <value>Load stamp picture</value>
+  </data>
+  <data name="Action_LoadStampPictureConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_LoadStampPictureConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_DeleteStampPicture" xml:space="preserve">
+    <value>Delete picture</value>
+  </data>
+  <data name="Action_DeleteStampPictureDescription" xml:space="preserve">
+    <value>Delete picture stamp.</value>
+  </data>
+  <data name="Action_DeleteStampPictureHint" xml:space="preserve">
+    <value>Delete picture stamp.</value>
+  </data>
+  <data name="Action_DeleteStampPictureConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_DeleteStampPictureConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ribbon_LoadStamp_1e793075f2a44928a17ef23a27260419" xml:space="preserve">
+    <value>Load stamp</value>
+  </data>
+  <data name="Enum_DocumentPosition_FirstPage" xml:space="preserve">
+    <value>First page</value>
+  </data>
+  <data name="Enum_DocumentPosition_EndPage" xml:space="preserve">
+    <value>End page</value>
+  </data>
+  <data name="Enum_DocumentPosition_EachPage" xml:space="preserve">
+    <value>Each page</value>
+  </data>
+  <data name="Enum_PagePosition_UpLeft" xml:space="preserve">
+    <value>Up left</value>
+  </data>
+  <data name="Enum_PagePosition_UpRight" xml:space="preserve">
+    <value>Up right</value>
+  </data>
+  <data name="Enum_PagePosition_DownLeft" xml:space="preserve">
+    <value>Down left</value>
+  </data>
+  <data name="Enum_PagePosition_DownRight" xml:space="preserve">
+    <value>Down right</value>
+  </data>
+  <data name="Enum_StampKind_DrawingStamp" xml:space="preserve">
+    <value>Drawing stamp</value>
+  </data>
+  <data name="Enum_StampKind_LoadStamp" xml:space="preserve">
+    <value>Loaded stamp</value>
+  </data>
+  <data name="Enum_StampKind_Barcode" xml:space="preserve">
+    <value>Barcode128</value>
+  </data>
+  <data name="Enum_StampKind_QRCode" xml:space="preserve">
+    <value>QR-Code</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Stamp setting</value>
+  </data>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Stamp setting</value>
+  </data>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Stamp settings</value>
+  </data>
+</root>

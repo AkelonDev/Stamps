@@ -1,0 +1,277 @@
+{
+  "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
+  "NameGuid": "afa06e1e-0cb3-4141-a383-ee483bb5bef6",
+  "Name": "StampModule",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "Akelon.StampModule.Client",
+  "ClientBaseAssemblyName": "Akelon.StampModule.ClientBase",
+  "ClientBaseNamespace": "Akelon.StampModule.ClientBase",
+  "ClientNamespace": "Akelon.StampModule.Client",
+  "Code": "StampMo",
+  "CompanyCode": "Akelon",
+  "Cover": {
+    "NameGuid": "93c9c344-ddcc-4e5a-9ba4-029ac3fd2f29",
+    "Actions": [
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "9c57c9d2-52a4-45c0-a3ad-b404fab59ce6",
+        "Name": "SettingStamp",
+        "EntityTypeId": "f934513f-69b5-42cc-8fda-e3774740a380",
+        "GroupId": "20503d5f-1e5c-4454-8d06-1d2be5158fcd"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "abeb0b5d-f8af-4d7b-a720-42e63d3eebc6",
+        "Name": "TestStart",
+        "FunctionName": "TestStart",
+        "GroupId": "75113bd1-0eb4-467f-811e-80f7e821025b"
+      }
+    ],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "a5fd3140-e321-4135-89e3-d10d9b136813",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [
+      {
+        "NameGuid": "75113bd1-0eb4-467f-811e-80f7e821025b",
+        "Name": "TestGroup",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconTestGroup_75113bd10eb4467f811e80f7e821025b.png",
+        "TabId": "73070d68-f280-4c44-8dc4-6ff3068e3eeb"
+      },
+      {
+        "NameGuid": "20503d5f-1e5c-4454-8d06-1d2be5158fcd",
+        "Name": "SettingGroup",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconSettingGroup_20503d5f1e5c44548d061d2be5158fcd.png",
+        "PreviousItemGuid": "75113bd1-0eb4-467f-811e-80f7e821025b",
+        "TabId": "73070d68-f280-4c44-8dc4-6ff3068e3eeb"
+      }
+    ],
+    "Header": {
+      "NameGuid": "fcb09167-8e6b-4588-8987-51c573054d51",
+      "BackgroundPosition": "Stretch"
+    },
+    "Tabs": [
+      {
+        "NameGuid": "73070d68-f280-4c44-8dc4-6ff3068e3eeb",
+        "Name": "Tab"
+      }
+    ]
+  },
+  "Dependencies": [
+    {
+      "Id": "2a7a63e7-8570-4623-97c1-bac71f31050f",
+      "IsSolutionModule": true,
+      "MaxVersion": "",
+      "MinVersion": ""
+    },
+    {
+      "Id": "ec7b606a-21ee-4f16-aba8-ab8c2af76d12",
+      "MaxVersion": "",
+      "MinVersion": "0.0.1.0"
+    },
+    {
+      "Id": "df83a2ea-8d43-4ec4-a34a-2e61863014df",
+      "MaxVersion": "",
+      "MinVersion": "4.6.37.0"
+    }
+  ],
+  "ExplorerTreeOrder": [
+    {
+      "ItemId": "f934513f-69b5-42cc-8fda-e3774740a380"
+    }
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "Akelon.StampModule",
+  "IsolatedAreas": [
+    {
+      "NameGuid": "e1adcebc-61b3-404c-a745-13a627d0b29b",
+      "Name": "GenerateStampArea"
+    }
+  ],
+  "IsolatedAssemblyName": "Akelon.StampModule.Isolated",
+  "IsolatedFunctions": [
+    {
+      "NameGuid": "94b66f70-f0c3-4ee1-8069-40d53b31c451",
+      "Name": "GenerateBarCode",
+      "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
+      "Parameters": [
+        {
+          "Name": "versionStream",
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
+        },
+        {
+          "Name": "settings",
+          "ParameterType": "global::Akelon.StampModule.Structures.Module.IStampParameters",
+          "ParameterTypeFullName": "Akelon.StampModule.Structures.Module.IStampParameters, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "global::System.IO.Stream",
+      "ReturnTypeFullName": "System.IO.Stream"
+    },
+    {
+      "NameGuid": "45b0e72c-6d85-43c6-8d3d-2283fd8fae27",
+      "Name": "GenerateImageStamp",
+      "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
+      "Parameters": [
+        {
+          "Name": "versionStream",
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
+        },
+        {
+          "Name": "settings",
+          "ParameterType": "global::Akelon.StampModule.Structures.Module.IStampParameters",
+          "ParameterTypeFullName": "Akelon.StampModule.Structures.Module.IStampParameters, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "global::System.IO.Stream",
+      "ReturnTypeFullName": "System.IO.Stream"
+    },
+    {
+      "NameGuid": "7bbb7fb8-4ca8-4308-b845-a65ed3220d5e",
+      "Name": "GenerateQRCode",
+      "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
+      "Parameters": [
+        {
+          "Name": "versionStream",
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
+        },
+        {
+          "Name": "settings",
+          "ParameterType": "global::Akelon.StampModule.Structures.Module.IStampParameters",
+          "ParameterTypeFullName": "Akelon.StampModule.Structures.Module.IStampParameters, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "global::System.IO.Stream",
+      "ReturnTypeFullName": "System.IO.Stream"
+    },
+    {
+      "NameGuid": "bd5e27b8-5840-42f4-9491-9b06dfd6ee19",
+      "Name": "GenerateStamp",
+      "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
+      "Parameters": [
+        {
+          "Name": "versionStream",
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
+        },
+        {
+          "Name": "settings",
+          "ParameterType": "global::Akelon.StampModule.Structures.Module.IStampParameters",
+          "ParameterTypeFullName": "Akelon.StampModule.Structures.Module.IStampParameters, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "global::System.IO.Stream",
+      "ReturnTypeFullName": "System.IO.Stream"
+    },
+    {
+      "NameGuid": "126cbddc-184c-4cd6-8715-04e355be5f6d",
+      "Name": "GetSizePicture",
+      "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
+      "Parameters": [
+        {
+          "Name": "imageStream",
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
+        }
+      ],
+      "ReturnType": "global::System.Collections.Generic.List<global::System.Int32>",
+      "ReturnTypeFullName": "System.Collections.Generic.List`1[[System.Int32]]"
+    }
+  ],
+  "IsolatedNamespace": "Akelon.StampModule.Isolated",
+  "Libraries": [
+    {
+      "NameGuid": "2a619cc9-5c6e-4b11-a75d-408d0405f494",
+      "Name": "ITextSharp",
+      "Scope": "Server"
+    },
+    {
+      "NameGuid": "14a73b58-112a-4a71-a582-df57ed80caf7",
+      "Name": "Drawing",
+      "Scope": "Both"
+    }
+  ],
+  "PublicFunctions": [
+    {
+      "Name": "GetSizePicture",
+      "Parameters": [
+        {
+          "Name": "imageFile",
+          "ParameterType": "System.Byte[]"
+        }
+      ],
+      "ReturnType": "global::System.Collections.Generic.List<global::System.Int32>",
+      "ReturnTypeFullName": "System.Collections.Generic.List"
+    }
+  ],
+  "PublicStructures": [
+    {
+      "Name": "StampParameters",
+      "IsIsolated": true,
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "PagePosition",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "DocumentPosition",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "SizeWidth",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Int32>"
+        },
+        {
+          "Name": "SizeHeight",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Int32>"
+        },
+        {
+          "Name": "StampImage",
+          "IsArray": true,
+          "TypeFullName": "global::System.Byte[]"
+        }
+      ],
+      "StructureNamespace": "Akelon.StampModule.Structures.Module"
+    }
+  ],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "Akelon.StampModule",
+  "ResourcesKeys": [
+    "MsgNotSettingByStampKind",
+    "MsgStampInstalled",
+    "MsgNotFoundStampSetting",
+    "DialogTopicSetStamp",
+    "DialogFieldDocument",
+    "DialogMsgNotVersions"
+  ],
+  "ServerAssemblyName": "Akelon.StampModule.Server",
+  "ServerNamespace": "Akelon.StampModule.Server",
+  "SharedAssemblyName": "Akelon.StampModule.Shared",
+  "SharedNamespace": "Akelon.StampModule.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.1",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

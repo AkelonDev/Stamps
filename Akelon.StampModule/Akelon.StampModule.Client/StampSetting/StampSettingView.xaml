@@ -1,6 +1,0 @@
-<UserControl x:Class="Akelon.StampModule.Client.StampSettingView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:presentation="clr-namespace:Sungero.Presentation;assembly=Sungero.Presentation">
-  <presentation:FormBuilder DataContext="{Binding}"/>
-</UserControl>

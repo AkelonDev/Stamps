@@ -348,6 +348,30 @@ namespace Akelon.StampModule.Shared.StampSetting
     {
       return global::Sungero.Domain.Shared.ResourceService.Instance.GetEntityStringResource(typeof(Akelon.StampModule.IStampSetting), "ErrorMsgFindDuplicate", false, args);
     }
+    public virtual global::CommonLibrary.LocalizedString LoadStampDialogTheme
+    {
+      get
+      {
+        return global::Sungero.Domain.Shared.ResourceService.Instance.GetEntityStringResource(typeof(Akelon.StampModule.IStampSetting) , "LoadStampDialogTheme");
+      }
+    }
+
+    public virtual global::CommonLibrary.LocalizedString LoadStampDialogThemeFormat(params object[] args)
+    {
+      return global::Sungero.Domain.Shared.ResourceService.Instance.GetEntityStringResource(typeof(Akelon.StampModule.IStampSetting), "LoadStampDialogTheme", false, args);
+    }
+    public virtual global::CommonLibrary.LocalizedString FieldFileDialogLoadStamp
+    {
+      get
+      {
+        return global::Sungero.Domain.Shared.ResourceService.Instance.GetEntityStringResource(typeof(Akelon.StampModule.IStampSetting) , "FieldFileDialogLoadStamp");
+      }
+    }
+
+    public virtual global::CommonLibrary.LocalizedString FieldFileDialogLoadStampFormat(params object[] args)
+    {
+      return global::Sungero.Domain.Shared.ResourceService.Instance.GetEntityStringResource(typeof(Akelon.StampModule.IStampSetting), "FieldFileDialogLoadStamp", false, args);
+    }
 
   }
 }

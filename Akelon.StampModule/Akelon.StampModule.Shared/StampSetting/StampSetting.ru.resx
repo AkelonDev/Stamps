@@ -59,12 +59,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ErrorNegativeValueSize" xml:space="preserve">
-    <value>Значение не должно быть отрицательным или равно 0.</value>
+    <value>Значение должно быть положительным.</value>
   </data>
   <data name="MsgNotImageStamp" xml:space="preserve">
     <value>Не загружено изображение штампа.</value>
   </data>
   <data name="ErrorMsgFindDuplicate" xml:space="preserve">
     <value>Настройка для этого типа документа уже существует.</value>
+  </data>
+  <data name="LoadStampDialogTheme" xml:space="preserve">
+    <value>Выберите изображение штампа</value>
+  </data>
+  <data name="FieldFileDialogLoadStamp" xml:space="preserve">
+    <value>Файл</value>
   </data>
 </root>

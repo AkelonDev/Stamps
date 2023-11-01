@@ -59,7 +59,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MsgNotSettingByStampKind" xml:space="preserve">
-    <value>Настройки на вид штампа не имеет обработки.</value>
+    <value>Не найдена настройка на вид штампа.</value>
   </data>
   <data name="MsgStampInstalled" xml:space="preserve">
     <value>Штамп установлен.</value>

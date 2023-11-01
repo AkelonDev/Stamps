@@ -21,8 +21,8 @@ namespace Akelon.StampModule.Client
 
     public virtual void LoadStampPicture(Sungero.Domain.Client.ExecuteActionArgs e)
     {
-      var dialog = Dialogs.CreateInputDialog("Выберите изображение штампа");
-      var file = dialog.AddFileSelect("Файл", false);
+      var dialog = Dialogs.CreateInputDialog(Akelon.StampModule.StampSettings.Resources.LoadStampDialogTheme);
+      var file = dialog.AddFileSelect(Akelon.StampModule.StampSettings.Resources.FieldFileDialogLoadStamp, false);
       file.WithFilter(string.Empty, "jpg", "png");
       
       if (dialog.Show() == DialogButtons.Ok)

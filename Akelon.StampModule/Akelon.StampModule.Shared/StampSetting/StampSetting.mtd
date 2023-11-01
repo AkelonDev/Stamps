@@ -356,7 +356,9 @@
   "ResourcesKeys": [
     "ErrorNegativeValueSize",
     "MsgNotImageStamp",
-    "ErrorMsgFindDuplicate"
+    "ErrorMsgFindDuplicate",
+    "LoadStampDialogTheme",
+    "FieldFileDialogLoadStamp"
   ],
   "RibbonCardMetadata": {
     "NameGuid": "93d711a3-9196-489b-b298-c26e29343b4f",

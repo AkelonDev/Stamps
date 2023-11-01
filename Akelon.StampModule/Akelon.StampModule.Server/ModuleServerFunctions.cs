@@ -18,6 +18,9 @@ namespace Akelon.StampModule.Server
     [Remote(IsPure = true)]
     public string CreateDocumentStamp(IOfficialDocument document)
     {
+      if (!document.HasVersions)
+        return Akelon.StampModule.Resources.DialogMsgNotVersions;
+      
       var docType = document.DocumentKind.DocumentType;
       var stampSetting = GetStampSetting(docType);
       

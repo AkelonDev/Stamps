@@ -194,9 +194,9 @@
       "Scope": "Server"
     },
     {
-      "NameGuid": "14a73b58-112a-4a71-a582-df57ed80caf7",
+      "NameGuid": "4e70c39c-852a-41c9-a0c2-5d9df7af4ec9",
       "Name": "Drawing",
-      "Scope": "Both"
+      "Scope": "Server"
     }
   ],
   "PublicFunctions": [

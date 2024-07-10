@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -12,9 +12,11 @@ namespace Akelon.StampModule
 
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)
     {
+      // Валидация загруженного штампа.
       if (_obj.StampKind == StampSetting.StampKind.LoadStamp && _obj.StampImage == null)
         e.AddError(Akelon.StampModule.StampSettings.Resources.MsgNotImageStamp);
       
+      // Проверка дубликатов настроек.
       if (StampSettings.GetAll().Any( s => s.Id != _obj.Id && s.Status == StampSetting.Status.Active && Equals(s.DocumentType, _obj.DocumentType)))
         e.AddError(Akelon.StampModule.StampSettings.Resources.ErrorMsgFindDuplicate);
     }

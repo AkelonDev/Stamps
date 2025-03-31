@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -37,7 +37,7 @@ namespace Akelon.StampModule.Server
         // Запустить создание штампа по его виду.
         using (var versionStream = new System.IO.MemoryStream())
         {
-          if (document.LastVersion.AssociatedApplication.Extension.ToLower() != Sungero.Docflow.PublicConstants.OfficialDocument.PdfExtension)
+          if (document.LastVersion.AssociatedApplication.Extension.ToLower() != Sungero.Docflow.PublicConstants.OfficialDocument.Extensions.Pdf)
             document = ConvertToPDF(document);
           
           document.LastVersion.Body.Read().CopyTo(versionStream);
@@ -67,7 +67,7 @@ namespace Akelon.StampModule.Server
             return Akelon.StampModule.Resources.MsgNotSettingByStampKind;
           }
           
-          document.LastVersion.AssociatedApplication = Sungero.Content.AssociatedApplications.GetByExtension(Sungero.Docflow.PublicConstants.OfficialDocument.PdfExtension);
+          document.LastVersion.AssociatedApplication = Sungero.Content.AssociatedApplications.GetByExtension(Sungero.Docflow.PublicConstants.OfficialDocument.Extensions.Pdf);
           document.Save();
           return Akelon.StampModule.Resources.MsgStampInstalled;
         }
@@ -97,7 +97,7 @@ namespace Akelon.StampModule.Server
       {
         document.LastVersion.Body.Read().CopyTo(versionStream);
         var newVersion = Sungero.Docflow.IsolatedFunctions.PdfConverter.GeneratePdf(versionStream, document.LastVersion.AssociatedApplication.Extension.ToLower());
-        document.CreateVersionFrom(newVersion, Sungero.Docflow.PublicConstants.OfficialDocument.PdfExtension);
+        document.CreateVersionFrom(newVersion, Sungero.Docflow.PublicConstants.OfficialDocument.Extensions.Pdf);
         document.Save();
       }
       

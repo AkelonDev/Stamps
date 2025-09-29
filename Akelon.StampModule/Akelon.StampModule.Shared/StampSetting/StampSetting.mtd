@@ -176,6 +176,7 @@
       ]
     }
   ],
+  "FormViewUuid": "a60f1718-ae43-47ba-bcca-fe49318bebbb",
   "HandledEvents": [
     "ShowingClient",
     "BeforeSaveServer"

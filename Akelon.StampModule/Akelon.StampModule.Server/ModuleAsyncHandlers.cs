@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Akelon.StampModule.Server
 {
-  public class ModuleAsyncHandlers
+  public partial class ModuleAsyncHandlers
   {
 
   }

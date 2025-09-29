@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Akelon.DocumentStamp.Shared
 {
-  public class ModuleFunctions
+  public partial class ModuleFunctions
   {
 
   }

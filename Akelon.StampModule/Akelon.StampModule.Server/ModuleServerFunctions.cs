@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Akelon.StampModule.Server
 {
-  public class ModuleFunctions
+  public partial class ModuleFunctions
   {
     /// <summary>
     /// Создать обработку штампа для документа.

@@ -15,7 +15,7 @@ using Akelon.StampModule.Structures.Module;
 
 namespace Akelon.StampModule.Isolated.GenerateStampArea
 {
-  public class IsolatedFunctions
+  public partial class IsolatedFunctions
   {
 
     #region Константы.

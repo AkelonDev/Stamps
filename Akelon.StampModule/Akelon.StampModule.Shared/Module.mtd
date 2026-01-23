@@ -205,7 +205,8 @@
       "Parameters": [
         {
           "Name": "imageFile",
-          "ParameterType": "System.Byte[]"
+          "ParameterType": "global::System.Byte[]",
+          "ParameterTypeFullName": "System.Byte"
         }
       ],
       "ReturnType": "global::System.Collections.Generic.List<global::System.Int32>",
@@ -267,7 +268,7 @@
   "Versions": [
     {
       "Type": "ModuleMetadata",
-      "Number": 11
+      "Number": 12
     },
     {
       "Type": "DomainApi",

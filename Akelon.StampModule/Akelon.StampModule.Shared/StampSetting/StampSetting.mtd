@@ -184,6 +184,7 @@
   "IconResourcesKeys": [],
   "IntegrationServiceName": "StampModuleStampSetting",
   "IsStatusEnabled": true,
+  "ListViewUuid": "3687ed28-f699-4726-9b03-097b723094a6",
   "OperationsClass": "",
   "Overridden": [
     "IsStatusEnabled"

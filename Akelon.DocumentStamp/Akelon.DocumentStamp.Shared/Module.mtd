@@ -32,9 +32,11 @@
   "IsolatedAssemblyName": "Akelon.DocumentStamp.Isolated",
   "IsolatedNamespace": "Akelon.DocumentStamp.Isolated",
   "OrderedSpecialFolders": [],
+  "OverrideSuffix": "Akelon",
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Akelon.DocumentStamp",
+  "ResourcesKeys": [],
   "ServerAssemblyName": "Akelon.DocumentStamp.Server",
   "ServerNamespace": "Akelon.DocumentStamp.Server",
   "SharedAssemblyName": "Akelon.DocumentStamp.Shared",
@@ -45,7 +47,7 @@
   "Versions": [
     {
       "Type": "SolutionMetadata",
-      "Number": 12
+      "Number": 13
     },
     {
       "Type": "ModuleMetadata",

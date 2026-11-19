@@ -103,7 +103,7 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
           var pathFont = GetFontPath(settings.StampFont);
           var font = BaseFont.CreateFont(pathFont, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
           var baseColor = GetFontColor(settings.FontColor);
-          var fontColor = new BaseColor(baseColor[1], baseColor[1], baseColor[2]);
+          var fontColor = new BaseColor(baseColor[0], baseColor[1], baseColor[2]);
           var stampText = String.Format("{0} № {1} от {2}", "Company", "RegNumber", "RegDate");
 
           // Определить страницы для штампа.
@@ -281,26 +281,13 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
           barcode.TextAlignment = iTextSharp.text.Element.ALIGN_CENTER;
           var color = new iTextSharp.text.BaseColor(0, 0, 0);
 
-          // Установить положение штампа на документе.
-          if (settings.DocumentPosition == EachPage)
-          {
-            // Установить штамп на каждую станицу.
-            for (int page = 1; page <= pdfReader.NumberOfPages; page++)
-            {
-              var canvas = pdfStamper.GetOverContent(page);
-              canvas.SetColorFill(color);
-              canvas.SetColorStroke(color);
+          // Определить страницы для штампа.
+          var pages = settings.DocumentPosition == EachPage
+            ? Enumerable.Range(1, pdfReader.NumberOfPages).ToList()
+            : new List<int> { settings.DocumentPosition == FirstPage ? 1 : pdfReader.NumberOfPages };
 
-              // Установить размер и позицию картинки на странице.
-              var image = barcode.CreateImageWithBarcode(canvas, color, color);
-              image = SetSizeImage(image, pdfReader, page, settings, true);
-              canvas.AddImage(image);
-            }
-          }
-          else
+          foreach (var page in pages)
           {
-            // Установить штамп на первую или последнюю страницу.
-            var page = settings.DocumentPosition == FirstPage ? 1 : pdfReader.NumberOfPages;
             var canvas = pdfStamper.GetOverContent(page);
             canvas.SetColorFill(color);
             canvas.SetColorStroke(color);
@@ -353,21 +340,13 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
           var barcodeQRCode = new BarcodeQRCode(сodeValue, settings.SizeWidth.Value, settings.SizeHeight.Value, null);
           var imageQR = barcodeQRCode.GetImage();
 
-          // Установить положение штампа на документе.
-          if (settings.DocumentPosition == EachPage)
+          // Определить страницы для штампа.
+          var pages = settings.DocumentPosition == EachPage
+            ? Enumerable.Range(1, pdfReader.NumberOfPages).ToList()
+            : new List<int> { settings.DocumentPosition == FirstPage ? 1 : pdfReader.NumberOfPages };
+
+          foreach (var page in pages)
           {
-            // Установить штамп на каждую станицу.
-            for (int page = 1; page <= pdfReader.NumberOfPages; page++)
-            {
-              var canvas = pdfStamper.GetOverContent(page);
-              imageQR = SetSizeImage(imageQR, pdfReader, page, settings, true);
-              canvas.AddImage(imageQR);
-            }
-          }
-          else
-          {
-            // Установить штамп на первую или последнюю страницу.
-            var page = settings.DocumentPosition == FirstPage ? 1 : pdfReader.NumberOfPages;
             var canvas = pdfStamper.GetOverContent(page);
             imageQR = SetSizeImage(imageQR, pdfReader, page, settings, true);
             canvas.AddImage(imageQR);
@@ -405,7 +384,7 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
       canvas.Clear(SKColors.Transparent);
       canvas.RotateDegrees(-12, width / 2f, height / 2f);
       var baseColor = GetFontColor(settings.FontColor);
-      var stampColor = new SKColor((byte)baseColor[1], (byte)baseColor[1], (byte)baseColor[2]);
+      var stampColor = new SKColor((byte)baseColor[0], (byte)baseColor[1], (byte)baseColor[2]);
 
       // Настроить кисть для рамки.
       var borderPaint = new SKPaint

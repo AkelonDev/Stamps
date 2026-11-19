@@ -45,6 +45,11 @@ namespace Akelon.StampModule
         _obj.SizeHeight = 50;
         _obj.SizeWidth = 50;
       }
+      else if (e.NewValue == StampSetting.StampKind.DrawingStamp)
+      {
+        _obj.SizeHeight = 120;
+        _obj.SizeWidth = 320;
+      }
       
       // Очистить загруженное изображение штампа.
       if (e.NewValue != StampSetting.StampKind.LoadStamp)

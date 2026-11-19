@@ -115,6 +115,25 @@
       "ReturnTypeFullName": "System.IO.Stream"
     },
     {
+      "NameGuid": "11e88011-4dfe-4f01-8ccf-33c686d7e5c6",
+      "Name": "GenerateDrawingStamp",
+      "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
+      "Parameters": [
+        {
+          "Name": "versionStream",
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
+        },
+        {
+          "Name": "settings",
+          "ParameterType": "global::Akelon.StampModule.Structures.Module.IStampParameters",
+          "ParameterTypeFullName": "Akelon.StampModule.Structures.Module.IStampParameters, Sungero.Domain.Interfaces"
+        }
+      ],
+      "ReturnType": "global::System.IO.Stream",
+      "ReturnTypeFullName": "System.IO.Stream"
+    },
+    {
       "NameGuid": "45b0e72c-6d85-43c6-8d3d-2283fd8fae27",
       "Name": "GenerateImageStamp",
       "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
@@ -153,8 +172,8 @@
       "ReturnTypeFullName": "System.IO.Stream"
     },
     {
-      "NameGuid": "bd5e27b8-5840-42f4-9491-9b06dfd6ee19",
-      "Name": "GenerateStamp",
+      "NameGuid": "1ef20816-753f-43b2-9711-6f4348cf3fd5",
+      "Name": "GenerateTextStamp",
       "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
       "Parameters": [
         {
@@ -194,9 +213,9 @@
       "Scope": "Server"
     },
     {
-      "NameGuid": "4e70c39c-852a-41c9-a0c2-5d9df7af4ec9",
-      "Name": "Drawing",
-      "Scope": "Server"
+      "NameGuid": "7ee76501-723d-4665-a40a-9398b3b1aea6",
+      "Name": "SkiaSharp",
+      "Scope": "Both"
     }
   ],
   "PublicFunctions": [
@@ -243,6 +262,21 @@
           "Name": "StampImage",
           "IsArray": true,
           "TypeFullName": "global::System.Byte[]"
+        },
+        {
+          "Name": "StampFont",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "FontSize",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Int32>"
+        },
+        {
+          "Name": "FontColor",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
         }
       ],
       "StructureNamespace": "Akelon.StampModule.Structures.Module"

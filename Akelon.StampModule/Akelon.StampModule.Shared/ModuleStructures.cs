@@ -36,5 +36,20 @@ namespace Akelon.StampModule.Structures.Module
     /// Изображение штампа.
     /// </summary>
     public byte[] StampImage { get; set; }
+
+    /// <summary>
+    /// Шрифт для штампа.
+    /// </summary>
+    public string StampFont { get; set; }
+
+    /// <summary>
+    /// Кегль.
+    /// </summary>
+    public int? FontSize { get; set; }
+
+    /// <summary>
+    /// Цвет шрифта.
+    /// </summary>
+    public string FontColor { get; set; }
   }
 }

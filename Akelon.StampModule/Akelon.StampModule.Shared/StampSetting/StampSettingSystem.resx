@@ -136,8 +136,8 @@
   <data name="Enum_PagePosition_DownRight" xml:space="preserve">
     <value>Down right</value>
   </data>
-  <data name="Enum_StampKind_DrawingStamp" xml:space="preserve">
-    <value>Drawing stamp</value>
+  <data name="Enum_StampKind_TextStamp" xml:space="preserve">
+    <value>Text stamp</value>
   </data>
   <data name="Enum_StampKind_LoadStamp" xml:space="preserve">
     <value>Loaded stamp</value>
@@ -156,5 +156,44 @@
   </data>
   <data name="CollectionDisplayName" xml:space="preserve">
     <value>Stamp settings</value>
+  </data>
+  <data name="Property_StampFont" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="Enum_StampFont_Arial" xml:space="preserve">
+    <value>Arial (WIN)</value>
+  </data>
+  <data name="Enum_StampFont_TimesNewRoman" xml:space="preserve">
+    <value>Times New Roman (WIN)</value>
+  </data>
+  <data name="Enum_StampFont_LiberationSans" xml:space="preserve">
+    <value>Liberation Sans (Linux)</value>
+  </data>
+  <data name="Enum_StampFont_DejaVuSans" xml:space="preserve">
+    <value>DejaVu Sans (Linux)</value>
+  </data>
+  <data name="Property_FontSize" xml:space="preserve">
+    <value>Font size</value>
+  </data>
+  <data name="Property_FontColor" xml:space="preserve">
+    <value>Font color</value>
+  </data>
+  <data name="Enum_FontColor_Orange" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="Enum_FontColor_Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="Enum_FontColor_Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="Enum_FontColor_Black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="Enum_StampKind_DrawingStamp" xml:space="preserve">
+    <value>Stamp SkiaSharp</value>
+  </data>
+  <data name="Enum_StampKind_HTMLStamp" xml:space="preserve">
+    <value>Stamp SkaiSharp</value>
   </data>
 </root>

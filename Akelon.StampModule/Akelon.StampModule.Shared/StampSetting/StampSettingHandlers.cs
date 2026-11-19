@@ -35,7 +35,7 @@ namespace Akelon.StampModule
         _obj.SizeHeight = null;
         _obj.SizeWidth = null;
       }
-      else if (e.NewValue == StampSetting.StampKind.DrawingStamp)
+      else if (e.NewValue == StampSetting.StampKind.TextStamp)
       {
         _obj.SizeHeight = 20;
         _obj.SizeWidth = 125;

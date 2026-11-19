@@ -9,7 +9,6 @@ namespace Akelon.StampModule
 {
   partial class StampSettingClientHandlers
   {
-
     public override void Showing(Sungero.Presentation.FormShowingEventArgs e)
     {
       Functions.StampSetting.SetVisibleProperties(_obj);

@@ -124,8 +124,8 @@
   <data name="Enum_PagePosition_DownRight" xml:space="preserve">
     <value>Нижний правый угол</value>
   </data>
-  <data name="Enum_StampKind_DrawingStamp" xml:space="preserve">
-    <value>Штамп из Drawing</value>
+  <data name="Enum_StampKind_TextStamp" xml:space="preserve">
+    <value>Текстовый штамп</value>
   </data>
   <data name="Enum_StampKind_LoadStamp" xml:space="preserve">
     <value>Загруженный штамп</value>
@@ -144,5 +144,44 @@
   </data>
   <data name="CollectionDisplayName" xml:space="preserve">
     <value>Настройки штампов</value>
+  </data>
+  <data name="Property_StampFont" xml:space="preserve">
+    <value>Шрифт</value>
+  </data>
+  <data name="Enum_StampFont_Arial" xml:space="preserve">
+    <value>Arial (WIN)</value>
+  </data>
+  <data name="Enum_StampFont_TimesNewRoman" xml:space="preserve">
+    <value>Times New Roman (WIN)</value>
+  </data>
+  <data name="Enum_StampFont_LiberationSans" xml:space="preserve">
+    <value>Liberation Sans (Linux)</value>
+  </data>
+  <data name="Enum_StampFont_DejaVuSans" xml:space="preserve">
+    <value>DejaVu Sans (Linux)</value>
+  </data>
+  <data name="Property_FontSize" xml:space="preserve">
+    <value>Кегль</value>
+  </data>
+  <data name="Property_FontColor" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="Enum_FontColor_Orange" xml:space="preserve">
+    <value>Оранжевый</value>
+  </data>
+  <data name="Enum_FontColor_Red" xml:space="preserve">
+    <value>Красный</value>
+  </data>
+  <data name="Enum_FontColor_Blue" xml:space="preserve">
+    <value>Синий</value>
+  </data>
+  <data name="Enum_FontColor_Black" xml:space="preserve">
+    <value>Чёрный</value>
+  </data>
+  <data name="Enum_StampKind_DrawingStamp" xml:space="preserve">
+    <value>Штамп средствами SkiaSharp</value>
+  </data>
+  <data name="Enum_StampKind_HTMLStamp" xml:space="preserve">
+    <value>Штамп средствами SkaiSharp</value>
   </data>
 </root>

@@ -33,6 +33,9 @@ namespace Akelon.StampModule.Server
         settings.SizeWidth = stampSetting.SizeWidth;
         settings.SizeHeight = stampSetting.SizeHeight;
         settings.StampImage = stampSetting.StampImage;
+        settings.StampFont = stampSetting.StampFont.Value.Value;
+        settings.FontSize = stampSetting.FontSize;
+        settings.FontColor = stampSetting.FontColor.Value.Value;
         
         // Запустить создание штампа по его виду.
         using (var versionStream = new System.IO.MemoryStream())
@@ -42,9 +45,9 @@ namespace Akelon.StampModule.Server
           
           document.LastVersion.Body.Read().CopyTo(versionStream);
 
-          if (stampSetting.StampKind == Akelon.StampModule.StampSetting.StampKind.DrawingStamp)
+          if (stampSetting.StampKind == Akelon.StampModule.StampSetting.StampKind.TextStamp)
           {
-            var newVersion = IsolatedFunctions.GenerateStampArea.GenerateStamp(versionStream, settings);
+            var newVersion = IsolatedFunctions.GenerateStampArea.GenerateTextStamp(versionStream, settings);
             document.LastVersion.Body.Write(newVersion);
           }
           else if (stampSetting.StampKind == Akelon.StampModule.StampSetting.StampKind.LoadStamp)
@@ -60,6 +63,11 @@ namespace Akelon.StampModule.Server
           else if (stampSetting.StampKind == Akelon.StampModule.StampSetting.StampKind.QRCode)
           {
             var newVersion = IsolatedFunctions.GenerateStampArea.GenerateQRCode(versionStream, settings);
+            document.LastVersion.Body.Write(newVersion);
+          }
+          else if (stampSetting.StampKind == Akelon.StampModule.StampSetting.StampKind.DrawingStamp)
+          {
+            var newVersion = IsolatedFunctions.GenerateStampArea.GenerateDrawingStamp(versionStream, settings);
             document.LastVersion.Body.Write(newVersion);
           }
           else

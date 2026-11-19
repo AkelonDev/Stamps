@@ -179,7 +179,8 @@
   "FormViewUuid": "a60f1718-ae43-47ba-bcca-fe49318bebbb",
   "HandledEvents": [
     "ShowingClient",
-    "BeforeSaveServer"
+    "BeforeSaveServer",
+    "CreatedServer"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "StampModuleStampSetting",
@@ -187,6 +188,7 @@
   "ListViewUuid": "3687ed28-f699-4726-9b03-097b723094a6",
   "OperationsClass": "",
   "Overridden": [
+    "HandledEvents",
     "IsStatusEnabled"
   ],
   "Properties": [
@@ -229,7 +231,7 @@
       "DirectValues": [
         {
           "NameGuid": "8331988b-1327-4ff0-a51c-843609c927b2",
-          "Name": "DrawingStamp",
+          "Name": "TextStamp",
           "Code": "DrawingStamp"
         },
         {
@@ -246,6 +248,11 @@
           "NameGuid": "55c05004-28e1-4e88-83ff-3ece78c6f8a5",
           "Name": "QRCode",
           "Code": "QRCode"
+        },
+        {
+          "NameGuid": "52931008-5aab-46f6-b487-538404448436",
+          "Name": "DrawingStamp",
+          "Code": "HTMLStamp"
         }
       ],
       "HandledEvents": [
@@ -352,6 +359,77 @@
       "Code": "StampImage",
       "IsShowedInList": false,
       "PreviousPropertyGuid": "5ee25b93-fca4-4587-89cf-c988415f4aef"
+    },
+    {
+      "$type": "Sungero.Metadata.EnumPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "c7e3bb3f-e853-40fe-b1a0-c33a59bdfba6",
+      "Name": "StampFont",
+      "Code": "StampFont",
+      "DirectValues": [
+        {
+          "NameGuid": "d2db501b-d0c4-48eb-bf1f-b62263f88bae",
+          "Name": "Arial",
+          "Code": "Arial"
+        },
+        {
+          "NameGuid": "794f06d3-be37-4d9d-b831-df9c20b0037a",
+          "Name": "TimesNewRoman",
+          "Code": "TimesNewRoman"
+        },
+        {
+          "NameGuid": "d30e2c1e-a5cd-4654-9b9f-54f7e3260f01",
+          "Name": "LiberationSans",
+          "Code": "LiberationSans"
+        },
+        {
+          "NameGuid": "a7e2949a-0506-4882-bfb7-8d1933d0a424",
+          "Name": "DejaVuSans",
+          "Code": "DejaVuSans"
+        }
+      ],
+      "IsShowedInList": false,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToEnumerationBinder",
+      "PreviousPropertyGuid": "6766504c-9d30-40f5-a3a0-2ab06599fbfe"
+    },
+    {
+      "$type": "Sungero.Metadata.IntegerPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "f10329dd-48e4-4198-a233-b2247bd4cfe4",
+      "Name": "FontSize",
+      "Code": "FontSize",
+      "IsShowedInList": false,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+      "PreviousPropertyGuid": "c7e3bb3f-e853-40fe-b1a0-c33a59bdfba6"
+    },
+    {
+      "$type": "Sungero.Metadata.EnumPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "030d3a02-f999-486a-8f97-98146d91212a",
+      "Name": "FontColor",
+      "Code": "FontColor",
+      "DirectValues": [
+        {
+          "NameGuid": "f13a3ce9-1065-4ed8-bad0-a244c476a67d",
+          "Name": "Black",
+          "Code": "Black"
+        },
+        {
+          "NameGuid": "851f6f6c-3d4b-4de7-b955-27ce7e068d16",
+          "Name": "Blue",
+          "Code": "Blue"
+        },
+        {
+          "NameGuid": "414b5ef8-91c7-42e4-b21c-4af5eca7ea1d",
+          "Name": "Red",
+          "Code": "Red"
+        },
+        {
+          "NameGuid": "32e411cd-979b-4b39-bc33-640cc89c1071",
+          "Name": "Orange",
+          "Code": "Orange"
+        }
+      ],
+      "IsShowedInList": false,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToEnumerationBinder",
+      "PreviousPropertyGuid": "f10329dd-48e4-4198-a233-b2247bd4cfe4"
     }
   ],
   "PublicStructures": [],

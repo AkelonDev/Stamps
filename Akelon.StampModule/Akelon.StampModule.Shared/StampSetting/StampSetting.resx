@@ -73,4 +73,13 @@
   <data name="FieldFileDialogLoadStamp" xml:space="preserve">
     <value>File</value>
   </data>
+  <data name="MsgFontAvailability" xml:space="preserve">
+    <value>Working with fonts in the demo solution is provided only for text stamps and SkiaSgarp stamps.</value>
+  </data>
+  <data name="ColorSelection" xml:space="preserve">
+    <value>Color selection</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
 </root>

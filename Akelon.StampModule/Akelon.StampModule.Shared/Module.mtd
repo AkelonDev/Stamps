@@ -134,7 +134,7 @@
       "ReturnTypeFullName": "System.IO.Stream"
     },
     {
-      "NameGuid": "45b0e72c-6d85-43c6-8d3d-2283fd8fae27",
+      "NameGuid": "0f48518a-0ea8-4adc-a9b1-f67e15bc1d1c",
       "Name": "GenerateImageStamp",
       "IsolatedAreaId": "e1adcebc-61b3-404c-a745-13a627d0b29b",
       "Parameters": [

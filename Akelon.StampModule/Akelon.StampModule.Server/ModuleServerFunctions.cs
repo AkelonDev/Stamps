@@ -35,16 +35,22 @@ namespace Akelon.StampModule.Server
         settings.StampImage = stampSetting.StampImage;
         settings.StampFont = stampSetting.StampFont.Value.Value;
         settings.FontSize = stampSetting.FontSize;
-        settings.FontColor = stampSetting.FontColor.Value.Value;
+        /* Настройка цвета передаётся в формате <Name>\<Hex>, для упрощения обработки.
+           iTextSharp - без усложеняни может определить цвет по имени.
+           SkiaSharp - валидно рабоет с переданным цветом в Hex.
+           При этом само значение, в рамках демонстрационного решения, понятно пользователю.*/
+        settings.FontColor = stampSetting.FontColor;
         
         // Запустить создание штампа по его виду.
         using (var versionStream = new System.IO.MemoryStream())
         {
+          // Преобразовать последнюю версию документа в .PDF.
           if (document.LastVersion.AssociatedApplication.Extension.ToLower() != Sungero.Docflow.PublicConstants.OfficialDocument.Extensions.Pdf)
             document = ConvertToPDF(document);
           
           document.LastVersion.Body.Read().CopyTo(versionStream);
 
+          // Сгенировать штамп для PDF версии документа с учётом настроек штампа.
           if (stampSetting.StampKind == Akelon.StampModule.StampSetting.StampKind.TextStamp)
           {
             var newVersion = IsolatedFunctions.GenerateStampArea.GenerateTextStamp(versionStream, settings);
@@ -75,6 +81,7 @@ namespace Akelon.StampModule.Server
             return Akelon.StampModule.Resources.MsgNotSettingByStampKind;
           }
           
+          // Занести версию со штампом в последнюю версию документа.
           document.LastVersion.AssociatedApplication = Sungero.Content.AssociatedApplications.GetByExtension(Sungero.Docflow.PublicConstants.OfficialDocument.Extensions.Pdf);
           document.Save();
           return Akelon.StampModule.Resources.MsgStampInstalled;

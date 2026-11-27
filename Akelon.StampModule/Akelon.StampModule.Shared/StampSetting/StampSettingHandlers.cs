@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -12,21 +12,21 @@ namespace Akelon.StampModule
 
     public virtual void SizeWidthChanged(Sungero.Domain.Shared.IntegerPropertyChangedEventArgs e)
     {
-      // Установить одинаковые значения для QR-кода.
+      // Установить одинаковые значения высоты и ширины QR-кода.
       if (e.NewValue != null && _obj.StampKind == StampSetting.StampKind.QRCode && _obj.SizeHeight != e.NewValue)
         _obj.SizeHeight = e.NewValue;
     }
 
     public virtual void SizeHeightChanged(Sungero.Domain.Shared.IntegerPropertyChangedEventArgs e)
     {
-      // Установить одинаковые значения для QR-кода.
+      // Установить одинаковые значения высоты и ширины QR-кода.
       if (e.NewValue != null && _obj.StampKind == StampSetting.StampKind.QRCode && _obj.SizeWidth != e.NewValue)
         _obj.SizeWidth = e.NewValue;
     }
 
     public virtual void StampKindChanged(Sungero.Domain.Shared.EnumerationPropertyChangedEventArgs e)
     {
-      Functions.StampSetting.SetVisibleProperties(_obj);
+      Functions.StampSetting.SetAvailabilityProperties(_obj);
       Functions.StampSetting.SetRequiredProperties(_obj);
       
       // Настроить изображения штампа по умолчанию.
@@ -37,16 +37,19 @@ namespace Akelon.StampModule
       }
       else if (e.NewValue == StampSetting.StampKind.TextStamp)
       {
+        // Размеры по умолчанию для демонстрационного решения.
         _obj.SizeHeight = 20;
         _obj.SizeWidth = 125;
       }
       else if (e.NewValue == StampSetting.StampKind.QRCode)
       {
+        // Размеры по умолчанию для демонстрационного решения.
         _obj.SizeHeight = 50;
         _obj.SizeWidth = 50;
       }
       else if (e.NewValue == StampSetting.StampKind.DrawingStamp)
       {
+        // Размеры по умолчанию для демонстрационного решения.
         _obj.SizeHeight = 120;
         _obj.SizeWidth = 320;
       }
@@ -56,6 +59,4 @@ namespace Akelon.StampModule
         _obj.StampImage = null;
     }
   }
-
-
 }

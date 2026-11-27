@@ -396,39 +396,22 @@
       "NameGuid": "f10329dd-48e4-4198-a233-b2247bd4cfe4",
       "Name": "FontSize",
       "Code": "FontSize",
+      "HandledEvents": [
+        "ValueInputClient"
+      ],
       "IsShowedInList": false,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
       "PreviousPropertyGuid": "c7e3bb3f-e853-40fe-b1a0-c33a59bdfba6"
     },
     {
-      "$type": "Sungero.Metadata.EnumPropertyMetadata, Sungero.Metadata",
-      "NameGuid": "030d3a02-f999-486a-8f97-98146d91212a",
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "66d9d2ed-f12f-4dae-8948-56d566349b53",
       "Name": "FontColor",
       "Code": "FontColor",
-      "DirectValues": [
-        {
-          "NameGuid": "f13a3ce9-1065-4ed8-bad0-a244c476a67d",
-          "Name": "Black",
-          "Code": "Black"
-        },
-        {
-          "NameGuid": "851f6f6c-3d4b-4de7-b955-27ce7e068d16",
-          "Name": "Blue",
-          "Code": "Blue"
-        },
-        {
-          "NameGuid": "414b5ef8-91c7-42e4-b21c-4af5eca7ea1d",
-          "Name": "Red",
-          "Code": "Red"
-        },
-        {
-          "NameGuid": "32e411cd-979b-4b39-bc33-640cc89c1071",
-          "Name": "Orange",
-          "Code": "Orange"
-        }
-      ],
+      "IsEnabled": false,
       "IsShowedInList": false,
-      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToEnumerationBinder",
+      "Length": 100,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
       "PreviousPropertyGuid": "f10329dd-48e4-4198-a233-b2247bd4cfe4"
     }
   ],
@@ -438,7 +421,10 @@
     "MsgNotImageStamp",
     "ErrorMsgFindDuplicate",
     "LoadStampDialogTheme",
-    "FieldFileDialogLoadStamp"
+    "FieldFileDialogLoadStamp",
+    "MsgFontAvailability",
+    "ColorSelection",
+    "Color"
   ],
   "RibbonCardMetadata": {
     "NameGuid": "93d711a3-9196-489b-b298-c26e29343b4f",

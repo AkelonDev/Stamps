@@ -10,18 +10,18 @@ namespace Akelon.StampModule.Shared
   partial class StampSettingFunctions
   {
     /// <summary>
-    /// Установить видимость свойств в зависимости от заполненных данных.
+    /// Установить доступность свойств в зависимости от заполненных данных.
     /// </summary>
-    public virtual void SetVisibleProperties()
+    public virtual void SetAvailabilityProperties()
     {
       var properties = _obj.State.Properties;
       
       properties.StampImage.IsVisible = _obj.StampKind == StampModule.StampSetting.StampKind.LoadStamp;
       
       var enableFont = _obj.StampKind == StampModule.StampSetting.StampKind.TextStamp || _obj.StampKind == StampModule.StampSetting.StampKind.DrawingStamp;
-      properties.StampFont.IsVisible = enableFont;
-      properties.FontSize.IsVisible = enableFont;
-      properties.FontColor.IsVisible = enableFont;
+      properties.StampFont.IsEnabled = enableFont;
+      properties.FontSize.IsEnabled = enableFont;
+      properties.FontColor.IsEnabled = enableFont;
 
       var isSizeVisible = _obj.StampKind != StampModule.StampSetting.StampKind.Barcode;
       properties.SizeHeight.IsVisible = isSizeVisible;

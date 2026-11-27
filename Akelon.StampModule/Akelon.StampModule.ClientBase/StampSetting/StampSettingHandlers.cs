@@ -9,9 +9,16 @@ namespace Akelon.StampModule
 {
   partial class StampSettingClientHandlers
   {
+
+    public virtual void FontSizeValueInput(Sungero.Presentation.IntegerValueInputEventArgs e)
+    {
+      // Проверить на минимально доступный кегль шрифта.
+      if (e.NewValue < 2)
+        e.NewValue = 2;
+    }
     public override void Showing(Sungero.Presentation.FormShowingEventArgs e)
     {
-      Functions.StampSetting.SetVisibleProperties(_obj);
+      Functions.StampSetting.SetAvailabilityProperties(_obj);
       Functions.StampSetting.SetRequiredProperties(_obj);
     }
 

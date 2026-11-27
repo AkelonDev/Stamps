@@ -176,19 +176,7 @@
     <value>Font size</value>
   </data>
   <data name="Property_FontColor" xml:space="preserve">
-    <value>Font color</value>
-  </data>
-  <data name="Enum_FontColor_Orange" xml:space="preserve">
-    <value>Orange</value>
-  </data>
-  <data name="Enum_FontColor_Red" xml:space="preserve">
-    <value>Red</value>
-  </data>
-  <data name="Enum_FontColor_Blue" xml:space="preserve">
-    <value>Blue</value>
-  </data>
-  <data name="Enum_FontColor_Black" xml:space="preserve">
-    <value>Black</value>
+    <value>Color</value>
   </data>
   <data name="Enum_StampKind_DrawingStamp" xml:space="preserve">
     <value>Stamp SkiaSharp</value>

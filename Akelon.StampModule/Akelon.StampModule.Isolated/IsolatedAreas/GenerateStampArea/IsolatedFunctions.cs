@@ -5,6 +5,7 @@ using Sungero.Core;
 using System.IO;
 using iTextSharp;
 using iTextSharp.text;
+using iTextSharp.text.html;
 using iTextSharp.text.pdf;
 using SkiaSharp;
 
@@ -63,6 +64,11 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
     /// Кегль по умолчанию.
     /// </summary>
     public const float fontSizeDefault = 18.75f;
+
+    /// <summary>
+    /// Разделитель по умолчанию.
+    /// </summary>
+    public const char delimiter = '\\';
     #endregion
 
     #region Обработка штампа через ITextSharp.
@@ -92,7 +98,7 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
     [Public]
     public virtual Stream GenerateTextStamp(Stream versionStream, Structures.Module.IStampParameters settings)
     {
-      var pdfReader = new PdfReader(versionStream);
+      using var pdfReader = new PdfReader(versionStream);
       PdfReader.unethicalreading = true;
 
       using (var newVersionStream = new MemoryStream())
@@ -102,11 +108,10 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
           var fontSizePt = settings.FontSize != null ? (float)settings.FontSize : fontSizeDefault;
           var pathFont = GetFontPath(settings.StampFont);
           var font = BaseFont.CreateFont(pathFont, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-          var baseColor = GetFontColor(settings.FontColor);
-          var fontColor = new BaseColor(baseColor[0], baseColor[1], baseColor[2]);
-          var stampText = String.Format("{0} № {1} от {2}", "Company", "RegNumber", "RegDate");
+          var fontColor = WebColors.GetRGBColor(settings.FontColor.Split(delimiter)[0]);
+          var stampText = String.Format("{0} № {1} от {2}", "Company", "RegNumber", "RegDate"); // Пример текста для демонстрационного решения.
 
-          // Определить страницы для штампа.
+          // Определить страницы для установки штампа.
           var pages = settings.DocumentPosition == EachPage
             ? Enumerable.Range(1, pdfReader.NumberOfPages).ToList()
             : new List<int> { settings.DocumentPosition == FirstPage ? 1 : pdfReader.NumberOfPages };
@@ -119,9 +124,9 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
 
             // Размер текста с учётом межстрочного интервала, для позиционирования.
             float textBlockWidth = font.GetWidthPoint(stampText.Trim(), fontSizePt);
-            float textBlockHeight = fontSizePt * 1.2f;
+            float textBlockHeight = fontSizePt * 1.2f; // Для примера используется межстрочный интервал в 20% от высоты кегля.
 
-            // Позиция текста: под логотипом (если он есть) или по той же логике позиции.
+            // Установить штамп в соотвествии с назначенной позицией на странице.
             var pagePosition = GetPagePosition((int)Math.Ceiling(textBlockWidth),
                                           (int)Math.Ceiling(textBlockHeight),
                                           settings.PagePosition,
@@ -140,26 +145,6 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
     }
 
     /// <summary>
-    /// Получить цвет шрифта.
-    /// </summary>
-    /// <param name="fontColor">Цвет шрифта.</param>
-    /// <returns>Цвет шрифта RGB.</returns>
-    private int[] GetFontColor(string fontColor)
-    {
-      // Установить по умолчанию чёрный цвет.
-      var baseColor = new int[] { 0, 0, 0 };
-
-      if (fontColor == "Blue")
-        baseColor = new int[] { 0, 0, 255 };
-      else if (fontColor == "Red")
-        baseColor = new int[] { 255, 0, 0 };
-      else if (fontColor == "Orange")
-        baseColor = new int[] { 255, 110, 0 };
-
-      return baseColor;
-    }
-
-    /// <summary>
     /// Получить путь шрифта.
     /// </summary>
     /// <param name="stampFont">Настрйока шрифта штампа.</param>
@@ -167,6 +152,8 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
     private string GetFontPath(string stampFont)
     {
       // Кандидаты путей к TTF: Windows + типичные Linux-пути.
+      /* Для демонстрационного решения используются самые популярные шрифты с проектов внедения,
+         а так же с учётом встречающихся аспектов расположения шрифтов ОС на серверах приложений.*/
       var candidates = new Dictionary<string, string[]>
       {
         {
@@ -216,7 +203,7 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
     /// <returns>PDF версия документа со штампом.</returns>
     public byte[] AddImageToPdf(Stream versionStream, Stream imageStream, Structures.Module.IStampParameters settings)
     {
-      var pdfReader = new PdfReader(versionStream);
+      using var pdfReader = new PdfReader(versionStream);
       PdfReader.unethicalreading = true;
 
       using (var newVersionStream = new System.IO.MemoryStream())
@@ -267,7 +254,7 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
     /// <returns>Версия со штампом.</returns>
     public byte[] SetBarCode(Stream versionStream, Structures.Module.IStampParameters settings)
     {
-      var pdfReader = new PdfReader(versionStream);
+      using var pdfReader = new PdfReader(versionStream);
       PdfReader.unethicalreading = true;
 
       using (var newVersionStream = new System.IO.MemoryStream())
@@ -276,10 +263,10 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
         {
           // Формирование штрихкода
           var barcode = new Barcode128();
-          barcode.Code = "Company RegNumber RegDate";
+          barcode.Code = "Company RegNumber RegDate"; // Пример текста для демонстрационного решения.
           barcode.ChecksumText = true;
           barcode.TextAlignment = iTextSharp.text.Element.ALIGN_CENTER;
-          var color = new iTextSharp.text.BaseColor(0, 0, 0);
+          var color = BaseColor.BLACK;
 
           // Определить страницы для штампа.
           var pages = settings.DocumentPosition == EachPage
@@ -292,7 +279,7 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
             canvas.SetColorFill(color);
             canvas.SetColorStroke(color);
 
-            // Установить размер и позицию картинки на странице.
+            // Установить размер и позицию шрихкода на странице.
             var image = barcode.CreateImageWithBarcode(canvas, color, color);
             image = SetSizeImage(image, pdfReader, page, settings, true);
             canvas.AddImage(image);
@@ -328,15 +315,15 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
     /// <returns>Версия со штампом.</returns>
     public byte[] SetQRCode(Stream versionStream, Structures.Module.IStampParameters settings)
     {
-      var pdfReader = new PdfReader(versionStream);
+      using var pdfReader = new PdfReader(versionStream);
       PdfReader.unethicalreading = true;
 
       using (var newVersionStream = new System.IO.MemoryStream())
       {
         using (var pdfStamper = new PdfStamper(pdfReader, newVersionStream, '\0', true))
         {
-          // Формирование QR-кода.
-          var сodeValue = String.Format("{0} \n № {1} от {2}", "Company", "RegNumber", "RegDate");
+          // Сформировать QR-код.
+          var сodeValue = String.Format("{0} № {1} от {2}", "Company", "RegNumber", "RegDate"); // Пример текста для демонстрационного решения.
           var barcodeQRCode = new BarcodeQRCode(сodeValue, settings.SizeWidth.Value, settings.SizeHeight.Value, null);
           var imageQR = barcodeQRCode.GetImage();
 
@@ -372,39 +359,38 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
     [Public]
     public virtual Stream GenerateDrawingStamp(Stream versionStream, Structures.Module.IStampParameters settings)
     {
-      var stampText = String.Format("{0} № {1} от {2}", "Company", "RegNumber", "RegDate");
+      var stampText = String.Format("{0} № {1} от {2}", "Company", "RegNumber", "RegDate"); // Пример текста для демонстрационного решения.
       var width = settings.SizeWidth.Value;
       var height = settings.SizeHeight.Value;
 
       // Сформировать поверхность для рендеринга штампа.
-      var surface = SKSurface.Create(new SKImageInfo(width, height));
+      using var surface = SKSurface.Create(new SKImageInfo(width, height));
       var canvas = surface.Canvas;
 
       // Очистить фон, повернуть холст для эффекта оттиска, задать цвет.
       canvas.Clear(SKColors.Transparent);
-      canvas.RotateDegrees(-12, width / 2f, height / 2f);
-      var baseColor = GetFontColor(settings.FontColor);
-      var stampColor = new SKColor((byte)baseColor[0], (byte)baseColor[1], (byte)baseColor[2]);
+      canvas.RotateDegrees(-12, width / 2f, height / 2f); // Настройка поворота на 12 градусов для эффекта оттиска.
+      var stampColor = SKColor.Parse(settings.FontColor.Split(delimiter)[1]);
 
-      // Настроить кисть для рамки.
-      var borderPaint = new SKPaint
+      // Настроить кисть для отрисовки рамки.
+      using var borderPaint = new SKPaint
       {
         Color = stampColor,
         Style = SKPaintStyle.Stroke,
-        StrokeWidth = 6,
+        StrokeWidth = 6, // Настройка толщины линии рамки.
         IsAntialias = true
       };
 
       // Отрисовать внешнюю и внутреннюю рамки.
-      var outerRect = new SKRoundRect(new SKRect(40, 40, width - 40, height - 40), 12, 12);
-      var innerBounds = new SKRect(50, 50, width - 50, height - 50);
-      var innerRect = new SKRoundRect(innerBounds, 8, 8);
+      using var outerRect = new SKRoundRect(new SKRect(40, 40, width - 40, height - 40), 12, 12); // Настройка отрисовки внешней рамки с учётом зависимых размеров.
+      var innerBounds = new SKRect(50, 50, width - 50, height - 50); // Внутренние границы вынесены в отдельную переменную для обработки центрирования текста.
+      using var innerRect = new SKRoundRect(innerBounds, 8, 8); // Настройка отрисовки внутренней рамки с учётом зависимых размеров.
       canvas.DrawRoundRect(outerRect, borderPaint);
       borderPaint.StrokeWidth = 2;
       canvas.DrawRoundRect(innerRect, borderPaint);
 
       // Настроить кисть для текста.
-      var textPaint = new SKPaint
+      using var textPaint = new SKPaint
       {
         Color = stampColor,
         IsAntialias = true
@@ -412,18 +398,18 @@ namespace Akelon.StampModule.Isolated.GenerateStampArea
 
       // Получить настройки шрифта.
       var pathFont = GetFontPath(settings.StampFont);
-      var font = new SKFont(SKTypeface.FromFile(pathFont, settings.FontSize.Value));
+      using var font = new SKFont(SKTypeface.FromFile(pathFont, settings.FontSize.Value));
 
       // Отцентрировать текст по внутренней рамке.    
       var metricsFont = font.Metrics;
       var centerX = innerBounds.MidX;
-      var textY = innerBounds.MidY - (metricsFont.Ascent + metricsFont.Descent) / 2f;
+      var textY = innerBounds.MidY - (metricsFont.Ascent + metricsFont.Descent) / 2f; // Центровка текста по внутренним границам.
       canvas.DrawText(stampText, centerX, textY, SKTextAlign.Center, font, textPaint);
       canvas.Restore();
 
       // Сформировать объект картинки и произвести установку в версию документа.
       var image = surface.Snapshot();
-      var data = image.Encode(SKEncodedImageFormat.Png, 100);
+      var data = image.Encode(SKEncodedImageFormat.Png, 100); // 100 - установленное качество картинки при кадрировании, доступные значения от 0 до 100.
       var imageStream = data.AsStream();
       imageStream.Position = 0;
       var byteArrPdfVersion = AddImageToPdf(versionStream, imageStream, settings);

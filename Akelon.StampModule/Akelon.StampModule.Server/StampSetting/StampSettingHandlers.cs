@@ -12,10 +12,10 @@ namespace Akelon.StampModule
 
     public override void Created(Sungero.Domain.CreatedEventArgs e)
     {
-      // Установить по умолчанию шрифт для штампа.
+      // Установить по умолчанию, для демонстрационного решения, настройки шрифта штампа.
       _obj.StampFont = StampSetting.StampFont.Arial;
       _obj.FontSize = 18;
-      _obj.FontColor = StampSetting.FontColor.Black;
+      _obj.FontColor = Colors.Common.Black.Name + "\\" + Colors.Common.Black.ToString();
     }
 
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)

@@ -166,18 +166,6 @@
   <data name="Property_FontColor" xml:space="preserve">
     <value>Цвет</value>
   </data>
-  <data name="Enum_FontColor_Orange" xml:space="preserve">
-    <value>Оранжевый</value>
-  </data>
-  <data name="Enum_FontColor_Red" xml:space="preserve">
-    <value>Красный</value>
-  </data>
-  <data name="Enum_FontColor_Blue" xml:space="preserve">
-    <value>Синий</value>
-  </data>
-  <data name="Enum_FontColor_Black" xml:space="preserve">
-    <value>Чёрный</value>
-  </data>
   <data name="Enum_StampKind_DrawingStamp" xml:space="preserve">
     <value>Штамп средствами SkiaSharp</value>
   </data>

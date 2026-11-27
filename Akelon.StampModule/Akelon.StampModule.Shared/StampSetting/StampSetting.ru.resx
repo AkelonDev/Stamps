@@ -73,4 +73,13 @@
   <data name="FieldFileDialogLoadStamp" xml:space="preserve">
     <value>Файл</value>
   </data>
+  <data name="MsgFontAvailability" xml:space="preserve">
+    <value>Работа со шрифтами, в демонстрационном решении, предусмотрена только для текстовых штампов и штампов ShiaSgarp.</value>
+  </data>
+  <data name="ColorSelection" xml:space="preserve">
+    <value>Выбор цвета</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
 </root>
